@@ -11,9 +11,9 @@ interface User {
 
 let allSocket: User[] = [];
 
-wss.on("connection", (socket) => {
-  socket.on("message", (message) => {
-    const parsedMessage = JSON.parse(message.toString());
+wss.on("connection", (socket: WebSocket) => {
+  socket.on("message", (message: string) => {
+    const parsedMessage = JSON.parse(message);
 
     if (parsedMessage.type === "join") {
       const { roomId, username, dp } = parsedMessage.payload;
