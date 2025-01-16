@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     if (!joined) return;
 
-    const backendUrl = "wss://chat-app-5-fh59.onrender.com";
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const ws = new WebSocket(backendUrl);
 
