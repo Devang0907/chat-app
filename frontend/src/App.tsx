@@ -12,6 +12,7 @@ function App() {
   const [input, setInput] = useState<string>("");
 
   const wsRef = useRef<WebSocket | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null); // Ref for auto-scrolling
 
   const preBuiltDps = [
     "/images/dp1.jpg",
@@ -37,8 +38,7 @@ function App() {
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-const ws = new WebSocket(backendUrl);
-
+    const ws = new WebSocket(backendUrl);
 
     ws.onopen = () => {
       ws.send(
@@ -81,6 +81,13 @@ const ws = new WebSocket(backendUrl);
       ws.close();
     };
   }, [joined, roomId, username, dp]);
+
+  // Auto-scroll to the bottom whenever messages update
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
 
   const handleJoin = () => {
     if (roomId.trim() && username.trim() && dp) {
@@ -198,6 +205,8 @@ const ws = new WebSocket(backendUrl);
             </div>
           </div>
         ))}
+        {/* Empty div for scrolling */}
+        <div ref={messagesEndRef}></div>
       </div>
 
       <div className="p-4 bg-gray-800 flex items-center space-x-2 border-t border-gray-700">
