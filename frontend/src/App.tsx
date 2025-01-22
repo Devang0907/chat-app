@@ -124,7 +124,8 @@ function App() {
     return (
       <div className="h-screen flex flex-col justify-center items-center bg-gray-900 text-gray-200">
         <div className="p-6 bg-gray-800 rounded-md shadow-md">
-          <h1 className="text-lg font-semibold mb-4">Enter Room ID, Username and Set DP</h1>
+        <h1 className="text-3xl font-bold text-center text-blue-400 mb-6">Orbit</h1>
+        <h2 className="text-lg font-semibold mb-4 text-center">Join a Chat Room</h2>
           <input
             className="w-full p-2 mb-4 border border-gray-700 bg-gray-700 text-gray-200 rounded-md"
             type="text"
@@ -165,7 +166,8 @@ function App() {
   return (
     <div className="h-screen flex flex-col bg-gray-900 text-gray-200">
       <div className="flex items-center justify-between p-4 bg-gray-800 shadow-md">
-        <h1 className="text-lg font-medium">Room ID: {roomId}</h1>
+      <h1 className="text-xl font-bold text-blue-400">Orbit</h1>
+        <h2 className="text-lg font-medium">Room ID: {roomId}</h2>
         <button
           className="text-sm text-red-400 underline hover:text-red-300 transition"
           onClick={() => setJoined(false)}
