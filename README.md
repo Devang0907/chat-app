@@ -4,7 +4,7 @@ This is a WebSocket-based chat application built with a TypeScript backend and a
 
 ## Live Demo
 
-You can check out the live demo of the application [here](https://chat-app-qcma.vercel.app/).
+You can check out the live demo of the application [here](https://chat.devangrakholiya.me/).
 
 ## Features
 
@@ -19,3 +19,5 @@ The backend code is located in the index.ts file. It handles WebSocket connectio
 
 ## Frontend Code
 The main frontend code is located in the App.tsx file. It handles user input, WebSocket communication, and UI rendering.
+
+
